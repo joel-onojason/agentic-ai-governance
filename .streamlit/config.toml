@@ -1,0 +1,17 @@
+# Streamlit configuration for the Agentic AI Governance Management System.
+# Kept minimal on purpose. The system is stateless and needs no runtime
+# configuration beyond the theme and telemetry opt-out.
+
+[theme]
+base = "light"
+primaryColor = "#1f4e79"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5f5f5"
+textColor = "#111111"
+font = "serif"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true

@@ -1,0 +1,10 @@
+streamlit==1.60.0
+pandas==3.0.5
+plotly==6.9.0
+# Pinned transitive native deps: an unpinned pyarrow (25.x) segfaulted on rerun.
+numpy==2.5.1
+pyarrow==24.0.0
+
+# Test dependencies
+pytest==9.1.1
+pytest-cov==7.1.0
