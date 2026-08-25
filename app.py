@@ -25,7 +25,7 @@ from ui.components import (
     render_crosswalk_view,
 )
 from ui.heatmap import build_heatmap
-from evaluation.cases import STUB_CASES, ALL_CASES
+from evaluation.cases import ALL_CASES
 from evaluation.runner import run_all, stub_summary
 
 

@@ -30,7 +30,7 @@ level attribute (continuous monitoring, scheduled auditing, drilling,
 prospective review, or red-teaming).
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Dict, List, Tuple
 
 

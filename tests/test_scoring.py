@@ -2,7 +2,7 @@
 
 import pytest
 
-from core.scoring import calculate_by_variant_id, calculate, ScoringResult
+from core.scoring import calculate_by_variant_id, calculate
 from core.variants import PUBLIC_SECTOR, LARGE_ENTERPRISE
 
 

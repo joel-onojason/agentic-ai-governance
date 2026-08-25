@@ -11,7 +11,7 @@ inside them. Session state is handled in app.py.
 Reference: Section 4.2.6 of the project thesis.
 """
 
-from typing import Dict, Tuple
+from typing import Dict
 
 import streamlit as st
 

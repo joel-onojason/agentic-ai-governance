@@ -10,7 +10,7 @@ import dataclasses
 
 import pytest
 
-from core.dimensions import ALL_DIMENSIONS, Dimension, get_dimension
+from core.dimensions import ALL_DIMENSIONS, get_dimension
 
 
 def test_exactly_six_dimensions() -> None:

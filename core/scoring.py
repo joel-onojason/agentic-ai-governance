@@ -14,7 +14,7 @@ Reference: Section 3.4 of the project thesis.
 """
 
 from dataclasses import dataclass
-from typing import Dict, Tuple
+from typing import Dict
 
 from core.variants import Variant, get_variant
 from core.levels import level_name_from_score

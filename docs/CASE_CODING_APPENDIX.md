@@ -1,12 +1,16 @@
 # Case Coding Appendix
 
-**Empirical per-dimension evidence tables for the three stub retrospective
+**Empirical per-dimension evidence tables for the fifteen retrospective
 cases used to validate the Agentic AI Governance Management System.**
 
 This appendix is the audit trail for every score in
 `evaluation/cases.py`. Chapter Four of the thesis references this
-document in Section 4.2.8. Chapter Five extends the same method to the
-full twelve to fifteen case sample.
+document at the point of the initial three-stub delivery (Meta/WhatsApp,
+Apple Card, Ghana Mahama). Chapter Five extends the sample to the full
+fifteen-case set by adding twelve cases: ten new entity cases and two
+regulator-maturity benchmarks (FCCPC/DEON, NDPC 1,368-firm compliance
+notice). All fifteen are coded under the same rubric and coding rules,
+and every score cites a primary source.
 
 ---
 
@@ -36,9 +40,10 @@ against the five-level maturity rubric.
    source affirmatively documents the higher-level attribute (continuous
    monitoring, scheduled auditing, drilling, prospective review, or red
    teaming).
-4. No dimension in any case is scored at Level 5 because none of the
-   primary sources evidenced adaptive governance, learning loops, or
-   red-team exercises.
+4. No dimension in any of the fifteen cases is scored at Level 5,
+   because none of the primary sources evidenced adaptive governance,
+   learning loops, or red-team exercises. Level 5 is therefore
+   aspirational within the sample studied here.
 
 ---
 
@@ -573,33 +578,87 @@ adaptive red-teaming.
 
 ## Cross-case synthesis
 
-The three cases occupy three different regions of the maturity space
-rather than three points on a single line, which is what a stub-code
-demonstration needs.
+The fifteen cases occupy a wide swath of the maturity space rather than
+clustering at a single point, which is what a governance rubric needs to
+demonstrate. The primary sample of thirteen entity cases spans from
+Ghana Mahama at 1.15 (Ad hoc) to Apple Card at 3.00 (Defined), a range
+of 1.85 points on the four-point scale. The two regulator benchmarks
+sit above the primary sample and anchor the top of the scale at
+approximately 3.0 to 3.35 (Defined).
 
-- **Case 1 (Meta/WhatsApp)**: high D5 with depressed D6. Diagnostic
-  marker for institutional maturity defeated by enforcement collapse.
-- **Case 2 (Apple Card/Goldman)**: high D5 with depressed D4. Diagnostic
-  marker for technical maturity without human-facing transparency.
-- **Case 3 (Ghana deepfake)**: flat Level-1 profile with a single D6
-  bump. Diagnostic marker for governance absence with reactive criminal
-  accountability.
+**Score vectors for all fifteen cases** (ordered by ascending Public
+Sector score within each panel).
 
-Plotted as vectors of the six scores:
+*Primary sample — thirteen entity cases:*
 
-| Case | D1 | D2 | D3 | D4 | D5 | D6 |
-|------|----|----|----|----|----|----|
-| Meta/WhatsApp | 2 | 2 | 2 | 2 | 3 | 2 |
-| Apple Card | 3 | 3 | 3 | 2 | 4 | 3 |
-| Ghana deepfake | 1 | 1 | 1 | 1 | 1 | 2 |
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | PS | LE |
+|------|----|----|----|----|----|----|----|----|
+| Ghana Mahama deepfake | 1 | 1 | 1 | 1 | 1 | 2 | 1.15 | 1.15 |
+| Sokoloan / NITDA (2021) | 1 | 2 | 1 | 1 | 2 | 1 | 1.35 | 1.35 |
+| NIMC NIN/BVN | 1 | 1 | 1 | 2 | 2 | 1 | 1.40 | 1.30 |
+| HK/UAE voice-clone | 2 | 1 | 1 | 1 | 2 | 2 | 1.50 | 1.50 |
+| JAMB 2025 UTME | 2 | 2 | 1 | 1 | 2 | 3 | 1.80 | 1.85 |
+| Arup deepfake | 2 | 1 | 1 | 2 | 2 | 3 | 1.85 | 1.80 |
+| Flutterwave series | 2 | 2 | 2 | 2 | 2 | 2 | 2.00 | 2.00 |
+| INEC IReV 2023 | 2 | 2 | 2 | 2 | 2 | 3 | 2.15 | 2.15 |
+| Meta / WhatsApp NDPC | 2 | 2 | 2 | 2 | 3 | 2 | 2.20 | 2.15 |
+| NDPC v. Fidelity | 2 | 2 | 2 | 2 | 3 | 2 | 2.20 | 2.15 |
+| NDPC v. MultiChoice | 2 | 2 | 2 | 2 | 3 | 2 | 2.20 | 2.15 |
+| NDPC seven-firm agg. | 2 | 2 | 2 | 2 | 3 | 3 | 2.35 | 2.30 |
+| Apple Card / Goldman | 3 | 3 | 3 | 2 | 4 | 3 | 3.00 | 3.00 |
 
-These three produce numerically separable profiles under both variants,
-which shows that the six-dimension coding discriminates between failure
-types rather than collapsing them into a single "bad governance" label.
+*Regulator-maturity benchmark panel — two cases:*
+
+| Case | D1 | D2 | D3 | D4 | D5 | D6 | PS | LE |
+|------|----|----|----|----|----|----|----|----|
+| FCCPC / DEON Regulations | 3 | 2 | 3 | 3 | 3 | 4 | 3.00 | 2.95 |
+| NDPC 1,368-firm notice | 3 | 3 | 3 | 3 | 4 | 4 | 3.35 | 3.30 |
+
+**Four failure signatures emerge across the primary sample.**
+
+- **Data-privacy dominated** (Meta/WhatsApp, NDPC v. Fidelity, NDPC v.
+  MultiChoice, NDPC seven-firm, Sokoloan). Signature: D5 at Defined on
+  a statute-anchored regulator finding while D1-D4 sit at Initial or
+  below. Diagnostic marker for an entity that has engaged with data-
+  protection compliance on paper but has not built the wider
+  governance envelope.
+- **Identity-authentication dominated** (Ghana Mahama deepfake, Arup
+  deepfake, HK/UAE voice-clone, NIMC NIN/BVN). Signature: D2 at Level
+  1 as the crux, with D3 collapse where a delegated instruction chain
+  is accepted at face value. Diagnostic marker for synthetic-identity
+  attacks or licensed-credential resale defeating human or institutional
+  authentication.
+- **Algorithmic decision and system-availability dominated** (JAMB 2025
+  UTME, INEC IReV 2023). Signature: D3 and D4 at Level 1 with D6 rising
+  to Defined only on the strength of a post-hoc public post-mortem.
+  Diagnostic marker for public-sector automated pipelines producing
+  consequential outputs without pre-release human review, detected
+  externally or after the fact.
+- **Control-monitoring and delegation dominated** (Flutterwave series).
+  Signature: a flat Level 2 vector with recurrence signalling absent
+  continuous monitoring. Diagnostic marker for enterprise entities with
+  policies and some detection but no drilled, audited controls.
+
+**Two regulator-maturity exemplars** (FCCPC/DEON, NDPC 1,368-firm
+notice) sit in a separate benchmark panel because they score regulators
+rather than institutions. They anchor the top of the maturity scale
+(D6 at Managed on both), demonstrating that the rubric distinguishes
+Defined from Managed at the higher levels even though no primary-sample
+entity reaches those levels.
+
+The fifteen cases produce numerically separable profiles under both
+variants, and the ranking is stable across variants with only marginal
+shifts at the edges (largest gap: NIMC at 0.10 between PS and LE
+weighting). This confirms that the six-dimension coding discriminates
+between failure types rather than collapsing them into a single "bad
+governance" label, and that the two variants shift emphasis correctly
+without disturbing the overall ordering.
 
 ---
 
 ## Evidence gaps and viva-relevant caveats
+
+**Original three stub cases (unchanged).**
 
 - The specific generation tool used in the Ghana deepfake case (Case 3
   D1) is not identified in any located source.
@@ -614,3 +673,40 @@ types rather than collapsing them into a single "bad governance" label.
   about disparate treatment and impact, not a normative endorsement of
   the system's governance maturity across all six dimensions. The
   Level 4 score on D5 reflects programme maturity, not outcome fairness.
+
+**Extension cases (added for Chapter Five).**
+
+- Several extension cases (Cases 11, 12, 13, 15) rest on regulator
+  statements and reputable secondary reporting rather than full published
+  decisions. Where the primary decision is not publicly available, the
+  coding cites the regulator statement as the primary source. Fidelity,
+  MultiChoice, the seven-firm aggregate, and the NDPC 1,368-firm notice
+  fall in this category.
+- Case 6 (HK/UAE voice-clone) rests entirely on secondary reporting of a
+  US court filing; no published judgment was located. Coding is flagged
+  as news-plus-court-document, not a published decision.
+- Case 11 (NDPC v. Fidelity) is contested: Fidelity publicly denied the
+  NDPC finding. The score reflects the regulator finding with the
+  contest flagged.
+- Case 5 (NIMC NIN/BVN) is contested: NIMC denied any breach of its
+  systems. The score reflects the documented ecosystem failure per
+  coding rule 3 (default to the lower level where a denial is not
+  accompanied by affirmatively documented governance controls).
+- Case 13 (NDPC seven-firm) aggregates seven unnamed firms; its
+  entity-level vector is a group inference, not a single-entity finding.
+- Cases 14 and 15 (FCCPC/DEON and NDPC 1,368-firm notice) are coded as
+  regulator-maturity exemplars rather than as entity failures. They
+  score a regulator's posture, not a failing institution. See the
+  Cross-case synthesis section above for the separation rationale.
+- Enforcement reversals introduce a further caveat. The Meta and
+  WhatsApp NDPC track was reversed by a Federal High Court consent
+  judgment of 3 November 2025 (documented in Case 1 D6). The FCCPC/DEON
+  enforcement was suspended by court order in April 2026 before being
+  reinstated by the July 2026 judgment (documented in Case 14 D6).
+  Regulator maturity can regress; the coding captures this in the D6
+  score for each affected case.
+- Coder bias: all fifteen cases were coded by a single researcher. The
+  default-low rule (rule 3) was adopted specifically to counter this
+  bias, and every inferred score is flagged in the individual case
+  entries. A future extension should introduce a second independent
+  coder and report Cohen's kappa per dimension.

@@ -11,7 +11,6 @@ import pytest
 
 from core.levels import (
     ALL_LEVELS,
-    MaturityLevel,
     get_level,
     level_name_from_score,
 )

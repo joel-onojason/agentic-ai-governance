@@ -14,7 +14,7 @@ import pandas as pd
 
 from core.scoring import calculate_by_variant_id
 from core.variants import ALL_VARIANTS
-from evaluation.cases import RetrospectiveCase, STUB_CASES, ALL_CASES
+from evaluation.cases import RetrospectiveCase, ALL_CASES
 
 
 def run_case(case: RetrospectiveCase, variant_id: str) -> dict:
