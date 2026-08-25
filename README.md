@@ -125,6 +125,24 @@ Full per-dimension evidence tables, with primary-source citations, are
 in `docs/CASE_CODING_APPENDIX.md`. Chapter Five of the thesis extends
 the sample to the full twelve to fifteen case set using the same method.
 
+## Repository state and reproducibility
+
+Two git tags mark the two ex-ante and ex-post moments of the design
+science progression documented in the thesis:
+
+- `v1.0-chapter4` — the three-stub state at the close of Chapter Four.
+  Reproduces Table 4.2, Figures 4.1 through 4.4, and the pytest suite
+  as it stood at initial delivery.
+- `v1.1-chapter5` — the fifteen-case extended state at the close of
+  Chapter Five. Reproduces Tables 5.4 and 5.5, Figures 5.1 through
+  5.4, and the extended pytest suite.
+
+To inspect either state locally:
+
+    git checkout v1.0-chapter4    # ex-ante artefact (3 stubs)
+    git checkout v1.1-chapter5    # ex-post extended artefact (15 cases)
+    git checkout main             # current live state
+
 ## Citation
 
 If you use this artefact, please cite the thesis:
