@@ -150,6 +150,427 @@ through arrests. A governance vacuum with an ex-post criminal response.
 
 ---
 
+## Case 4: Sokoloan / Soko Lending Company NITDA sanction (Nigeria, August 2021)
+
+**Score vector:** D1=1, D2=2, D3=1, D4=1, D5=2, D6=1.
+**Weighted totals:** Public Sector 1.35, Large Enterprise 1.35. Maturity level: Ad hoc.
+
+**Failure signature:** data-privacy and oversight dominated failure with a
+strong automation-abuse element. Near-uniform Level 1 across D1, D3, D4,
+and D6 reflects an entity with essentially no governance, weaponising
+automated data-harvesting and messaging. The NITDA order (mandatory DPIA,
+nine-month oversight) is the corrective, not a pre-existing control.
+
+**Primary sources.**
+
+- NITDA, "NITDA Sanctions SokoLoan for Privacy Invasion" (Hadiza Umar), August 2021. <https://nitda.gov.ng/nitda-sanctions-soko-loan-for-privacy-invasion/>
+- Nairametrics, 19 August 2021.
+- TechCabal, 24 August 2021.
+- NDPR 2019, Articles 2.2, 2.3, 2.5, 3.1(7), 4.1(7); NDPR Implementation Framework Art 3.1(1).
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Ad hoc | No governance | App auto-harvested contacts and triggered debt-shaming messages with no controls. | 1 |
+| D2 | Initial | Not directly at issue | Inferred; loans disbursed on app data. | 2 |
+| D3 | Ad hoc | Trackers shared data with third parties | Embedded trackers shared customer data with undisclosed third parties. | 1 |
+| D4 | Ad hoc | No stop control on automated messaging | Automated privacy-invading messages sent with no human gate; NITDA had to order a stop. | 1 |
+| D5 | Initial | Some policy, not tied to anchors | Privacy notice existed but was non-conforming (NDPR Arts 2.2, 2.3, 2.5) with insufficient lawful basis. | 2 |
+| D6 | Ad hoc | Non-filing of audit reports | NDPR Art 4.1(7) audit filing missed; refused cooperation with the DPA. | 1 |
+
+**Coding confidence.** D2 scored on inferred posture. All other dimensions documented.
+
+---
+
+## Case 5: NIMC NIN/BVN black-market breaches (Nigeria, 2024-2026)
+
+**Score vector:** D1=1, D2=1, D3=1, D4=2, D5=2, D6=1.
+**Weighted totals:** Public Sector 1.40, Large Enterprise 1.30. Maturity level: Ad hoc.
+
+**Failure signature:** identity-authentication and accountability dominated
+public-sector failure. A near-uniform Level 1 vector: the compromise is
+precisely in D2 and D3 (licensed-partner access resold with no oversight)
+at the heart of the national identity system, with D6 undermined by
+institutional denial. The single Level 2 (D4) reflects only reactive,
+journalist-triggered takedowns.
+
+**Primary sources.**
+
+- Foundation for Investigative Journalism (FIJ), Investigation series on NIMC licensed front-end partners and the NIN/BVN black market, 2024-2025. <https://fij.ng/>
+- FIJ, "After FIJ's Story, Website Selling BVNs, NINs Goes Dark" (NIMC denial).
+- FIJ, "New NIMC Act Promises Data Privacy, Yet It Excludes Nigeria's Data Protection Regulator From Board".
+- Paradigm Initiative statements, 2024-2025.
+- Biometric Update, August 2025.
+- NIMC Act 2007 ss. 28-30 (unlawful access, up to 10 years or N10m).
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Ad hoc | No control over API/tool access | API keys enabling verification and modification resold to unauthorised parties. | 1 |
+| D2 | Ad hoc | Licensed-partner access uncontrolled | FEP credentials sub-leased with no binding of access to authorised identities. | 1 |
+| D3 | Ad hoc | Delegated partner oversight absent | Licensed FEPs sub-leasing access "while regulators look away". | 1 |
+| D4 | Initial | Reactive takedowns only | Takedowns occurred only after journalist exposure; no proactive halt. | 2 |
+| D5 | Initial | Policy exists, weak enforcement | Statutory protections exist (NIMC Act s. 30) but not enforced against the ecosystem. | 2 |
+| D6 | Ad hoc | Denial, no outcome | FIJ recorded "no outcome in 3 major cases"; NIMC denial without documented governance. | 1 |
+
+**Coding confidence.** All dimensions documented via investigative reporting and NIMC statement. NIMC's denial is a contested finding; the coding takes the documented ecosystem failure at face value.
+
+---
+
+## Case 6: Hong Kong / UAE bank voice-clone fraud (Early 2020, reported October 2021)
+
+**Score vector:** D1=2, D2=1, D3=1, D4=1, D5=2, D6=2.
+**Weighted totals:** Public Sector 1.50, Large Enterprise 1.50. Maturity level: Initial.
+
+**Failure signature:** identity-authentication dominated failure and the
+audio-only precursor to the Arup video-conference fraud. Total D2 collapse
+(voice-as-identity) combined with Level 1 D3 and D4 (single actor, no
+delegation oversight, no kill-switch) produced the USD 35 million loss.
+D6 is marginally above ad hoc only because transaction logs later
+supported cross-border tracing of USD 400,000.
+
+**Primary sources.**
+
+- Forbes, Thomas Brewster, "Fraudsters Cloned Company Director's Voice In $35 Million Heist", 14 October 2021. <https://www.forbes.com/sites/thomasbrewster/2021/10/14/huge-bank-fraud-uses-deep-fake-voice-tech-to-steal-millions/>
+- AI Incident Database, Incident 147. <https://incidentdatabase.ai/cite/147/>
+- US court filing referenced in Forbes coverage (case documents not publicly indexed).
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistent | Transfer authority exercised on voice plus email confirmation, no independent verification for USD 35m. | 2 |
+| D2 | Ad hoc | No identity authentication | Voice recognition treated as authentication; "deep voice" clone defeated the only identity check. | 1 |
+| D3 | Ad hoc | No oversight of instruction chain | Director-to-lawyer-to-manager chain accepted at face value with no verification. | 1 |
+| D4 | Ad hoc | Human present but no stop control | Manager acted alone; funds dispersed globally before any control triggered. | 1 |
+| D5 | Initial | Not directly at issue | Data breach not the issue; inferred low baseline given absence of verification infrastructure. | 2 |
+| D6 | Initial | Some logging enabled cross-border tracing | Transaction trail existed sufficient for post-hoc tracing of USD 400,000, but no proactive audit detected the fraud. | 2 |
+
+**Coding confidence.** D5 scored on inferred posture. The case relies on secondary reporting of a US court filing; no published judgment was located.
+
+---
+
+## Case 7: JAMB 2025 UTME technical failure (Nigeria, May 2025)
+
+**Score vector:** D1=2, D2=2, D3=1, D4=1, D5=2, D6=3.
+**Weighted totals:** Public Sector 1.80, Large Enterprise 1.85. Maturity level: Initial.
+
+**Failure signature:** algorithmic decision and oversight dominated
+public-sector failure. Total D3 and D4 collapse (no synchronisation
+oversight of delegated providers, no human check before releasing
+life-altering automated scores affecting 379,997 candidates), with the
+anomaly detected only externally. D6 reaches Defined on the strength of
+the post-hoc independent audit and candid public accountability. This
+case most directly evidences the governance gap the maturity model
+targets.
+
+**Primary sources.**
+
+- TechCabal, "Inside the server glitch behind JAMB's scrambled UTME score", 16 May 2025. <https://techcabal.com/2025/05/16/inside-the-server-glitch-behind-jambs-scrambled-utme-score/>
+- TheCable, "JAMB admits to error in 2025 UTME", 14 May 2025. <https://www.thecable.ng/breaking-jamb-admits-to-error-in-2025-utme-orders-resit-for-387000-candidates/>
+- TheCable, "Man narrates how daughter committed suicide over subpar 2025 UTME score". <https://www.thecable.ng/man-narrates-how-daughter-committed-suicide-over-subpar-2025-utme-score/>
+- Punch, "UTME resit: JAMB to release results of 379,000 candidates".
+- JAMB press briefing by Registrar Prof. Ishaq Oloyede, 14 May 2025.
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistent | New scoring/patch tools deployed; patch not applied uniformly. "The real failure was in system discipline." | 2 |
+| D2 | Initial | Not directly at issue | Candidate authentication not the failure point. | 2 |
+| D3 | Ad hoc | Failed oversight of two providers | Delegation to service providers with no synchronisation oversight; South-East had no dedicated server cluster. | 1 |
+| D4 | Ad hoc | No detection/stop before release | No human check caught the mass anomaly; results released; error detected externally by Educare. | 1 |
+| D5 | Initial | Not directly at issue | Result-data integrity, not personal data protection, was the issue. Inferred. | 2 |
+| D6 | Defined | Post-hoc audit, public admission | Independent psychometric audit engaged; Registrar accepted personal responsibility publicly. | 3 |
+
+**Coding confidence.** D2 and D5 scored on inferred posture. D1, D3, D4, D6 documented.
+
+---
+
+## Case 8: Arup deepfake video conference fraud (Hong Kong, January-May 2024)
+
+**Score vector:** D1=2, D2=1, D3=1, D4=2, D5=2, D6=3.
+**Weighted totals:** Public Sector 1.85, Large Enterprise 1.80. Maturity level: Initial.
+
+**Failure signature:** identity-authentication and human-in-the-loop
+dominated failure. Catastrophic collapse of D2 (no way to prove who was
+on the call) compounded by weak D1 and D3 transaction controls that let
+a single employee execute fifteen high-value transfers on a deepfaked
+instruction. D6 is relatively strong because of prompt reporting and
+public post-incident learning, but does not reach Level 5 as no
+pre-incident red-teaming or adaptive controls were documented.
+
+**Primary sources.**
+
+- CNN, "Arup revealed as victim of $25 million deepfake scam", 16 May 2024. <https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk>
+- South China Morning Post, 17 May 2024.
+- World Economic Forum, "Cybercrime: Lessons learned from a $25m deepfake attack" (Rob Greig, CIO), February 2025. <https://www.weforum.org/stories/2025/02/deepfake-ai-cybercrime-arup/>
+- AI Incident Database, Incident 634. <https://incidentdatabase.ai/cite/634/>
+- Hong Kong Police Force briefing (Acting Senior Superintendent Baron Chan Shun-ching), 17 May 2024.
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistently applied | Fifteen transfers of HKD 200m executed on video call, no independent transaction verification gating high-value payments. | 2 |
+| D2 | Ad hoc | No verification of participants | No mechanism to authenticate call participants; deepfakes from public video/audio went undetected. | 1 |
+| D3 | Ad hoc | No oversight of delegated instruction | Single employee acted on "confidential transaction" delegation with no secondary approver until after funds sent. | 1 |
+| D4 | Initial | Human in loop but no stop control | Employee initially suspicious but no verification protocol halted the fifteen transactions over a week. | 2 |
+| D5 | Initial | Some policy, not tied to a named finding | No data breach at issue (Arup: "none of our internal systems were compromised"); inferred baseline. | 2 |
+| D6 | Defined | Documented controls, reporting, post-incident learning | Prompt police report, full cooperation, public post-incident review by CIO at WEF. | 3 |
+
+**Coding confidence.** D5 scored on inferred posture. D1, D3, D4, D6 documented.
+
+---
+
+## Case 9: Flutterwave security incident series (Nigeria, 2023-2024)
+
+**Score vector:** D1=2, D2=2, D3=2, D4=2, D5=2, D6=2.
+**Weighted totals:** Public Sector 2.00, Large Enterprise 2.00. Maturity level: Initial.
+
+**Failure signature:** control-monitoring and delegation dominated
+enterprise fintech failure. A flat Level 2 vector reflects an entity with
+policies and some detection (the N19 billion cut-off) but no continuous,
+audited, drilled controls, as evidenced by four recurrences in about
+fourteen months and reliance on a court order rather than internal
+kill-switches for recovery.
+
+**Primary sources.**
+
+- TechCabal, "Flutterwave begins recovery of $24 million", 8 February 2024. <https://techcabal.com/2024/02/08/flutterwave-to-recover-missing-24million/>
+- TechCabal, "Flutterwave loses N11 billion in security breach", 16 May 2024. <https://techcabal.com/2024/05/16/exclusive-flutterwave-loses-%E2%82%A611-billion-in-security-breach/>
+- Techpoint Africa, "A fatal error by NIBSS worsened Flutterwave's N21 billion glitch". <https://techpoint.africa/insight/a-fatal-error-by-nibss-worsened-flutterwaves-%E2%82%A621-billion-glitch/>
+- Federal High Court Lagos Mareva injunction, 1 February 2024.
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistent | POS merchants "abused their access"; settlement-limit misconfiguration unreverted for three months. | 2 |
+| D2 | Initial | KYC gaps at receiving institutions | Recovery hampered by weak KYC/customer verification at neobanks. | 2 |
+| D3 | Initial | Cross-institution oversight failure | Failure spanned Flutterwave, POS merchants, NIBSS and 35 institutions with no effective inter-party monitoring. | 2 |
+| D4 | Initial | Detection after the fact | Settlement-limit tool cut off at N19bn only after exposure; suspensions applied reactively. | 2 |
+| D5 | Initial | Not directly at issue | Financial-controls failure, not data-privacy. Inferred. | 2 |
+| D6 | Initial | Repeated recurrence | Four incidents in about fourteen months indicates audit/monitoring not embedded; recovery via court, not internal control. | 2 |
+
+**Coding confidence.** D5 scored on inferred posture. Case relies on investigative reporting and court filings, not a published final judgment on liability.
+
+---
+
+## Case 10: INEC IReV 2023 presidential election failure (Nigeria, 25 February 2023)
+
+**Score vector:** D1=2, D2=2, D3=2, D4=2, D5=2, D6=3.
+**Weighted totals:** Public Sector 2.15, Large Enterprise 2.15. Maturity level: Initial.
+
+**Failure signature:** algorithmic and system-availability dominated
+public-sector failure. A D1/D3/D4 configuration and contingency failure
+on the single most consequential upload path, with the flagship result
+stream failing while parallel streams succeeded. D6 reaches Defined on
+the strength of the detailed published post-mortem and documented
+resilience improvements, though these were remedial rather than
+prospective.
+
+**Primary sources.**
+
+- INEC, Report on the conduct of the 2023 general elections, 526-page post-mortem, February 2024.
+- Premium Times, "INEC gives details of IReV failure". <https://www.premiumtimesng.com/news/top-news/671063>
+- BusinessDay, "INEC finally reveals why IReV failed in 2023 presidential poll". <https://businessday.ng/news/article/inec-finally-reveals-why-irev-failed-in-2023-presidential-poll/>
+- TheCable, "HTTP server error: INEC finally opens up on IReV failure during presidential poll".
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistent | Configuration bug in upload tool went undetected; controls inconsistent across result types. | 2 |
+| D2 | Initial | Not directly at issue | BVAS accreditation functioned; inferred moderate. | 2 |
+| D3 | Initial | Partial: NASS uploads worked | NASS results uploaded, presidential did not; configuration/mapping fault in a differentiated pipeline. | 2 |
+| D4 | Initial | Reactive hotfix, no contingency | Problem reported 4pm, partially resolved in four hours via hotfixes; no pre-tested failover for the flagship poll. | 2 |
+| D5 | Initial | Not directly at issue | Not a data-privacy failure; election-data integrity/availability. Inferred. | 2 |
+| D6 | Defined | Detailed public post-mortem | 526-page report with root cause and remediation ("additional QA checks", "end-to-end testing"); Supreme Court remarks on public confidence. | 3 |
+
+**Coding confidence.** D2 and D5 scored on inferred posture. D1, D3, D4, D6 documented from the official post-mortem.
+
+---
+
+## Case 11: NDPC v. Fidelity Bank (Nigeria, August 2024)
+
+**Score vector:** D1=2, D2=2, D3=2, D4=2, D5=3, D6=2.
+**Weighted totals:** Public Sector 2.20, Large Enterprise 2.15. Maturity level: Initial.
+
+**Failure signature:** data-privacy dominated failure. D5 is the crux
+(documented NDPA/NDPR consent breach), aggravated by D3 (processor
+non-compliance) and D6 (poor accountability during the probe). The bank
+had policies (Level 2-3 on paper) but no tested, mapped controls, and
+its dispute of the finding underscores an immature accountability
+culture.
+
+**Primary sources.**
+
+- NDPC Final Order against Fidelity Bank Plc, 21 August 2024, statement by Babatunde Bamigboye, Head of Legal, Enforcement and Regulations.
+- Premium Times, "Nigerian govt fines Fidelity Bank N555.8 million", 21 August 2024. <https://www.premiumtimesng.com/business/business-news/726713>
+- TechCabal, 21 August 2024.
+- BusinessDay, "NDPC fines Fidelity Bank N555.8 million over data privacy violations".
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistent | Automated data-collection tools (cookies, banking app over 1m downloads) deployed without lawful basis. | 2 |
+| D2 | Initial | Not directly at issue | Inferred from posture; account opened on data without proper consent implies weak identity controls. | 2 |
+| D3 | Initial | Vendor oversight failure | Reliance on "non-compliant third-party data processors" is a failed delegation oversight. | 2 |
+| D4 | Initial | Not directly at issue | Inferred; no evidence of consent-withdrawal or stop mechanisms. | 2 |
+| D5 | Defined | Documented, mapped to named anchors | Documented breach of NDPA 2023 and NDPR 2019 processing-without-consent provisions. | 3 |
+| D6 | Initial | Poor accountability during probe | Bank failed to provide accountability over 10+ correspondences; penalty aggravated for non-cooperation. | 2 |
+
+**Coding confidence.** D2 and D4 scored on inferred posture. D1, D3, D5, D6 documented.
+
+---
+
+## Case 12: NDPC v. MultiChoice Nigeria (July 2025)
+
+**Score vector:** D1=2, D2=2, D3=2, D4=2, D5=3, D6=2.
+**Weighted totals:** Public Sector 2.20, Large Enterprise 2.15. Maturity level: Initial.
+
+**Failure signature:** data-privacy dominated failure centred on unlawful
+cross-border data flows (D5 and D3). The extension of processing to
+non-subscribers and the "unsatisfactory" remediation give a D6 weakness.
+The vector closely mirrors Fidelity, marking a consistent NDPC
+enforcement pattern against large enterprises.
+
+**Primary sources.**
+
+- NDPC statement (Babatunde Bamigboye), 6 July 2025.
+- Punch, "NDPC fines MultiChoice N766m", 7 July 2025. <https://punchng.com/ndpc-fines-multichoice-%E2%82%A6766m-for-data-privacy-violations/>
+- Vanguard, 7 July 2025.
+- The ICIR, "NDPC fines MultiChoice Nigeria N766 million over data privacy violations".
+- Section 37, 1999 Constitution of the Federal Republic of Nigeria; NDPA 2023 s. 41.
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Some policy, inconsistent | Data-collection deemed "patently intrusive, unfair, unnecessary and disproportionate"; tool governance weak. | 2 |
+| D2 | Initial | Not directly at issue | Inferred; processing extended to non-subscribers implies weak subject-identity boundaries. | 2 |
+| D3 | Initial | Cross-border transfer without safeguards | Illegal cross-border transfer without adequacy/BCR/SCC safeguards is a failed delegation to foreign processors. | 2 |
+| D4 | Initial | Not directly at issue | Inferred low posture. | 2 |
+| D5 | Defined | Documented, mapped to named anchors | Documented finding of illegal cross-border transfer and privacy violation (NDPA s. 41; s. 37 Constitution). | 3 |
+| D6 | Initial | Non-cooperation | Remedial measures "unsatisfactory"; "want of cooperation" recorded. | 2 |
+
+**Coding confidence.** D2 and D4 scored on inferred posture. D1, D3, D5, D6 documented.
+
+---
+
+## Case 13: NDPC seven-firm N400m enforcement action (Nigeria, June 2024)
+
+**Score vector:** D1=2, D2=2, D3=2, D4=2, D5=3, D6=3.
+**Weighted totals:** Public Sector 2.35, Large Enterprise 2.30. Maturity level: Initial.
+
+**Failure signature:** data-privacy dominated aggregate enforcement case.
+The entity-side vector is a modest Level 2 with D5 and D6 at Defined,
+reflecting the documented, mapped remediation of seven firms. It
+corroborates the NDPC's escalating enforcement posture that culminates
+in the Fidelity, MultiChoice, and 1,368-firm actions.
+
+**Primary sources.**
+
+- NDPC public statement by Vincent Olatunji, National Commissioner, 11 June 2024.
+- TheCable, "NDPC fines four banks, three companies N400m for data violation". <https://www.thecable.ng/ndpc-fines-four-banks-three-companies-n400m-for-data-violation/>
+- Nairametrics, "Seven firms pay N400 million to NDPC as sanction for data breach", 12 June 2024. <https://nairametrics.com/2024/06/12/seven-firms-pay-n400-million-to-ndpc-as-sanction-for-data-breach/>
+- Techpoint Africa, "NDPC gets N400 million in fines from 7 companies for data breaches". <https://techpoint.africa/news/ndpc-gets-fines-companies-data-breaches/>
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Initial | Aggregate, entity-level low | Underlying entities showed inconsistent processing controls. | 2 |
+| D2 | Initial | Not detailed | Inferred; not itemised per firm. | 2 |
+| D3 | Initial | Vendor/processor breaches implied | Breaches across sectors imply processor/delegation weaknesses. | 2 |
+| D4 | Initial | Not detailed | Inferred low. | 2 |
+| D5 | Defined | Documented, mapped, seven resolved | Seven documented resolutions with remediation under NDPA (s. 48); enforcement mapped to the Act. | 3 |
+| D6 | Defined | Monitored programme | Regulator-driven accountability across 1,000+ investigations; entities paid remediation. | 3 |
+
+**Coding confidence.** D2 and D4 scored on inferred aggregate posture. Firms not individually named, so entity-level scores are group inferences. D5 and D6 documented.
+
+---
+
+## Case 14: FCCPC digital lending / DEON Regulations 2025 (Nigeria, 2022-2026) — REGULATOR BENCHMARK
+
+**Score vector:** D1=3, D2=2, D3=3, D4=3, D5=3, D6=4.
+**Weighted totals:** Public Sector 3.00, Large Enterprise 2.95. Maturity level: Defined.
+
+**Coded as a regulator-maturity benchmark, not an entity failure.**
+
+**Failure signature:** this is a regulator-maturity case rather than an
+entity failure, and it reads as the inverse of the loan-app cases it
+targets (Case 4). The FCCPC regime scores Defined-to-Managed because
+controls are documented, role-assigned, mapped to the FCCPA and NDPA,
+court-tested and continuously enforced (D6 Managed). It does not reach
+Level 5 as no prospective/red-team adaptive governance is documented,
+only reactive-then-sustained enforcement.
+
+**Primary sources.**
+
+- Sahara Reporters, 12 March 2022 (initial raids on GoCash, OKash, EasyCredit, Kashkash, Speedy Choice, Easy Moni, Sokoloan).
+- TechCabal, 12 March 2022.
+- FCCPC, "FCCPC Resumes Digital Lending Regulation", 20 July 2026. <https://fccpc.gov.ng/fccpc-resumes-digital-lending-regulation/>
+- Federal High Court Lagos judgment, Suit No. FHC/L/CS/760/2026, 20 July 2026 (Hon. Justice A. L. Allagoa), upholding DEON Regulations 2025 as intra vires.
+- TheCable, "FCCPC resumes enforcement as court upholds digital lending regulations".
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Defined | Documented regime, roles, anchors | DEON creates documented controls over lending tools/data access mapped to the FCCPA 2018. | 3 |
+| D2 | Initial | Registration requirement (new) | Operator registration required but only newly enforced; industry compliance nascent. | 2 |
+| D3 | Defined | Multi-agency enforcement | Coordinated FCCPC/ICPC/NITDA/NPF oversight; documented and role-assigned. | 3 |
+| D4 | Defined | App takedowns, account freezes | FCCPC executed kill-switch equivalents (app-store removals, frozen accounts) with court warrants. | 3 |
+| D5 | Defined | Documented, mapped, tested in court | DEON data-protection provisions upheld as intra vires. | 3 |
+| D6 | Managed | Enforcement monitored, litigated, resumed | Monitored enforcement with compliance deadlines (5 Jan 2026), suspension and court-tested resumption. | 4 |
+
+**Coding confidence.** All dimensions documented. Scores reflect the regulator's governance posture, coded as an enforcement/governance exemplar per coding rule 2.
+
+---
+
+## Case 15: NDPC 1,368-firm compliance notice (Nigeria, August 2025) — REGULATOR BENCHMARK
+
+**Score vector:** D1=3, D2=3, D3=3, D4=3, D5=4, D6=4.
+**Weighted totals:** Public Sector 3.35, Large Enterprise 3.30. Maturity level: Defined.
+
+**Coded as a regulator-maturity benchmark, not an entity failure.**
+
+**Failure signature:** like Case 14, a regulator-maturity exemplar, not an
+entity failure. It anchors the high end of the D5 and D6 scale (Managed)
+because it evidences continuous, scheduled, sector-wide monitored
+enforcement with audit cycles mapped to named anchors. It does not reach
+Level 5 as the notice is enforcement, not documented prospective or
+adaptive red-teaming.
+
+**Primary sources.**
+
+- NDPC public notice, 25 August 2025, requiring proof of NDPA 2023 and GAID 2025 compliance from 1,368 organisations within 21 days.
+- Hamu Legal, "NDPC Compliance Notice: What You Need to Do". <https://hamulegal.com/ndpc-compliance-notice-nigeria-2025/>
+- Web Security Lab, "NDPC Orders 1,300+ Firms to Prove Compliance with Nigeria's Data Protection Act". <https://websecuritylab.org/ndpc-orders-1300-firms-to-prove-compliance-with-nigerias-data-protection-act/>
+- Mondaq, "NDPC Sets 21-Day Deadline". <https://www.mondaq.com/nigeria/data-protection/1675960>
+- NDPC / GAID 2025 official PDF. <https://ndpc.gov.ng/wp-content/uploads/2025/07/NDP-ACT-GAID-2025-MARCH-20TH.pdf>
+- NDPA 2023 s. 44 (DCPMI registration); GAID 2025 Art 18(1)(f), Art 28(3), Art 43.
+
+**Evidence table.**
+
+| Dim | Level | Descriptor matched | Finding | Score |
+|---|---|---|---|---|
+| D1 | Defined | Documented directive, roles | GAID Art 43 sets documented parameters for AI/automated processing; sector-wide directive. | 3 |
+| D2 | Defined | Registration of controllers | Requires registration and DPO appointment (NDPA s. 44); identity/accountability of controllers. | 3 |
+| D3 | Defined | Processor/vendor obligations | Requires DPCO compliance audits and processor agreements; documented delegation oversight. | 3 |
+| D4 | Defined | Directive with deadline/sanction | 21-day compliance deadline with enforcement trigger functions as governance stop-gate. | 3 |
+| D5 | Managed | Monitored, sector-by-sector enforcement | Continuous, monitored, sector-wide enforcement across 1,368 entities mapped to NDPA/GAID. | 4 |
+| D6 | Managed | Annual CAR audit cycle | Mandatory annual compliance-audit-return cycle filed with the Commission. | 4 |
+
+**Coding confidence.** Coded as a governance/enforcement exemplar per coding rule 2. All dimensions documented.
+
+---
+
 ## Cross-case synthesis
 
 The three cases occupy three different regions of the maturity space

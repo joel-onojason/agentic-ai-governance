@@ -8,7 +8,7 @@ Run locally:
 
 The application has three tabs:
   1. Assess: the interactive scoring interface (FR1 through FR6)
-  2. Retrospective Cases: runs the three stub cases (FR7)
+  2. Retrospective Cases: runs the fifteen retrospective cases (FR7)
   3. About: model overview, cross-walk, version, source repo link
 
 Reference: Section 4.2.6 of the project thesis.
@@ -25,7 +25,7 @@ from ui.components import (
     render_crosswalk_view,
 )
 from ui.heatmap import build_heatmap
-from evaluation.cases import STUB_CASES
+from evaluation.cases import STUB_CASES, ALL_CASES
 from evaluation.runner import run_all, stub_summary
 
 
@@ -151,8 +151,8 @@ with tab_cases:
 
     st.divider()
 
-    # Detail expander for each case
-    for case in STUB_CASES:
+    # Detail expander for each case (all fifteen)
+    for case in ALL_CASES:
         with st.expander(case.name):
             st.markdown(f"**Jurisdiction:** {case.jurisdiction}")
             st.markdown(f"**Date range:** {case.date_range}")

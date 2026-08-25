@@ -14,7 +14,7 @@ import pandas as pd
 
 from core.scoring import calculate_by_variant_id
 from core.variants import ALL_VARIANTS
-from evaluation.cases import RetrospectiveCase, STUB_CASES
+from evaluation.cases import RetrospectiveCase, STUB_CASES, ALL_CASES
 
 
 def run_case(case: RetrospectiveCase, variant_id: str) -> dict:
@@ -44,7 +44,7 @@ def run_all(cases: List[RetrospectiveCase] = None) -> pd.DataFrame:
     cases surface at the top.
     """
     if cases is None:
-        cases = list(STUB_CASES)
+        cases = list(ALL_CASES)
     rows = []
     for case in cases:
         for variant in ALL_VARIANTS:
@@ -55,12 +55,17 @@ def run_all(cases: List[RetrospectiveCase] = None) -> pd.DataFrame:
 
 def stub_summary() -> str:
     """
-    Human-readable one-liner summarising the three stub cases.
-    Used in the Streamlit evaluation tab.
+    Human-readable one-liner summarising the extended fifteen-case sample.
+    Used in the Streamlit evaluation tab. Kept under the name stub_summary
+    for backward compatibility with the Chapter Four wiring; the actual
+    output now describes the full fifteen-case extended sample.
     """
     return (
-        f"Three stub cases loaded: "
-        + ", ".join(c.name.split(" (")[0] for c in STUB_CASES)
-        + ". Chapter Five of the thesis extends the sample to the full "
-        "twelve-to-fifteen case set."
+        "Fifteen retrospective cases loaded: the three initial stubs "
+        "(Meta/WhatsApp, Apple Card, Ghana Mahama) carried forward from "
+        "the Chapter Four delivery, plus twelve extensions added for "
+        "Chapter Five (ten additional entity cases and two "
+        "regulator-maturity benchmarks: FCCPC/DEON and NDPC 1,368-firm "
+        "compliance notice). Full per-dimension evidence tables sit in "
+        "docs/CASE_CODING_APPENDIX.md."
     )

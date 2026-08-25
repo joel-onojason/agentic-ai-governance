@@ -71,10 +71,10 @@ def test_ghana_mahama_scores_lowest_under_both_variants() -> None:
         assert r_gh["weighted_score"] < r_apple["weighted_score"]
 
 
-def test_run_all_returns_six_rows() -> None:
-    """Three cases x two variants = six rows."""
+def test_run_all_returns_thirty_rows() -> None:
+    """Fifteen cases x two variants = thirty rows."""
     df = run_all()
-    assert len(df) == 6
+    assert len(df) == 30
 
 
 def test_get_case_returns_the_named_case() -> None:
@@ -104,7 +104,7 @@ def test_run_all_dataframe_columns_and_dtypes() -> None:
         assert col in df.columns
     # every case appears under both variants
     assert set(df["variant_id"]) == {"public_sector", "large_enterprise"}
-    assert len(df["case_id"].unique()) == 3
+    assert len(df["case_id"].unique()) == 15
 
 
 def test_run_all_is_sorted_by_variant_then_score() -> None:
