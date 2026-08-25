@@ -133,8 +133,9 @@ with tab_cases:
         "sit in `docs/CASE_CODING_APPENDIX.md`."
     )
 
-    # Run the full evaluation table
+    # Run the full evaluation table, then show only the selected variant.
     df = run_all()
+    df = df[df["variant_id"] == variant_id]
     st.dataframe(
         df,
         hide_index=True,
