@@ -9,6 +9,7 @@ propagation of scores and title.
 import plotly.graph_objects as go
 import pytest
 
+from core.dimensions import ALL_DIMENSIONS
 from ui.heatmap import build_heatmap, _LAYOUT
 
 
@@ -75,3 +76,41 @@ def test_missing_dimension_raises_keyerror() -> None:
     incomplete = {"D1": 1, "D2": 1, "D3": 1, "D4": 1, "D5": 1}  # D6 missing
     with pytest.raises(KeyError):
         build_heatmap(incomplete)
+
+
+def test_row_coordinates_are_distinct() -> None:
+    """Both rows must occupy distinct y positions.
+
+    Two identical categorical labels (e.g. y=["", ""]) collapse into a single
+    Plotly category, which renders only the top row and drops D4..D6.
+    """
+    fig = build_heatmap(_all(3))
+    y = list(fig.data[0].y)
+    assert len(y) == len(_LAYOUT)
+    assert len(set(y)) == len(_LAYOUT)
+
+
+def test_every_dimension_has_an_annotation_on_its_own_row() -> None:
+    scores = {"D1": 1, "D2": 2, "D3": 3, "D4": 4, "D5": 5, "D6": 2}
+    fig = build_heatmap(scores)
+    y_positions = list(fig.data[0].y)
+    for r, row in enumerate(_LAYOUT):
+        for c, dim_id in enumerate(row):
+            match = [
+                a for a in fig.layout.annotations
+                if dim_id in a.text and f"Level {scores[dim_id]}" in a.text
+            ]
+            assert len(match) == 1, f"{dim_id} missing from the annotations"
+            # The annotation must sit on a y coordinate the trace actually plots.
+            assert match[0].y == y_positions[r]
+            assert match[0].x == c
+
+
+def test_each_cell_names_its_own_dimension() -> None:
+    """A column spans two dimensions (D1/D4 ...), so axis ticks cannot name them."""
+    fig = build_heatmap(_all(3))
+    texts = " | ".join(a.text for a in fig.layout.annotations)
+    for dim in ALL_DIMENSIONS:
+        assert dim.id in texts and dim.name in texts
+    assert fig.layout.xaxis.showticklabels is False
+    assert fig.layout.yaxis.showticklabels is False

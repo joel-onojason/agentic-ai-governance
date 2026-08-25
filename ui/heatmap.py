@@ -67,7 +67,10 @@ def build_heatmap(scores: Dict[str, int], title: str = "Governance Maturity Heat
                 dict(
                     x=c,
                     y=r,
-                    text=f"<b>{dim_id}</b><br>Level {scores[dim_id]}",
+                    text=(
+                        f"<b>{dim_id} {dim_name_by_id[dim_id]}</b>"
+                        f"<br>Level {scores[dim_id]}"
+                    ),
                     showarrow=False,
                     font=dict(
                         color="white" if scores[dim_id] >= 3 else "black",
@@ -79,8 +82,13 @@ def build_heatmap(scores: Dict[str, int], title: str = "Governance Maturity Heat
     fig = go.Figure(
         data=go.Heatmap(
             z=z,
-            x=[dim_name_by_id[d] for d in _LAYOUT[0]],
-            y=["", ""],  # rows are unlabelled to keep the layout clean
+            # Column coordinates are numeric and unlabelled. A column spans two
+            # different dimensions (D1/D4, D2/D5, D3/D6), so no single column
+            # name would be correct; each cell names its own dimension instead.
+            x=[0, 1, 2],
+            # Numeric row coordinates. Two identical categorical labels
+            # (e.g. ["", ""]) collapse into one category and hide row 1.
+            y=[0, 1],
             hovertext=hover,
             hoverinfo="text",
             colorscale="Blues",
@@ -102,8 +110,13 @@ def build_heatmap(scores: Dict[str, int], title: str = "Governance Maturity Heat
         title=dict(text=title, x=0.5, xanchor="center"),
         annotations=annotations,
         height=380,
-        margin=dict(l=20, r=20, t=60, b=40),
-        yaxis=dict(autorange="reversed"),  # so D1..D3 sit on top
+        margin=dict(l=20, r=20, t=60, b=20),
+        xaxis=dict(showticklabels=False, ticks="", showgrid=False, zeroline=False),
+        # Rows are unlabelled to keep the layout clean; reversed so D1..D3 sit on top.
+        yaxis=dict(
+            showticklabels=False, ticks="", showgrid=False, zeroline=False,
+            autorange="reversed",
+        ),
     )
 
     return fig
