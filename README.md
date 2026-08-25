@@ -30,8 +30,8 @@ University). See the thesis for the full design rationale.
 - Returns a weighted score in [1.00, 5.00] mapped to the CMMI-aligned
   levels (Ad hoc, Initial, Defined, Managed, Optimising).
 - Renders a six-cell heat-map that visualises the per-dimension score.
-- Runs a retrospective case set (three stub cases in this version;
-  twelve to fifteen in the full thesis evaluation).
+- Runs a retrospective case set (fifteen empirically coded cases:
+  thirteen entity cases plus two regulator-maturity benchmarks).
 
 ## Design principle: stateless by choice
 
@@ -69,8 +69,9 @@ The test suite verifies:
 - Every variant's weights sum to 1.00 and cover exactly D1..D6.
 - All 30 descriptor cells are present and non-empty.
 - The scoring engine rejects out-of-range scores and unknown variants.
-- The three stub cases carry the exact scores documented in the
-  case coding appendix.
+- All fifteen retrospective cases carry the exact scores documented in
+  the case coding appendix, and their weighted totals under both
+  variants reproduce the published cross-case synthesis table.
 
 ## Deploy to Streamlit Community Cloud
 
@@ -100,7 +101,7 @@ agentic-ai-governance/
 │   ├── components.py         Reusable widgets
 │   └── heatmap.py            Six-cell Plotly heat-map
 ├── evaluation/               Retrospective case runner
-│   ├── cases.py              Three stub cases (empirically coded)
+│   ├── cases.py              Fifteen retrospective cases (empirically coded)
 │   └── runner.py             Scores every case under every variant
 ├── tests/                    Unit tests
 ├── docs/
@@ -113,17 +114,33 @@ agentic-ai-governance/
 
 ## Case coding
 
-The three stub cases in `evaluation/cases.py` are:
+`evaluation/cases.py` holds fifteen retrospective cases: the three stubs
+delivered with Chapter Four, plus twelve extensions added for Chapter
+Five (ten further entity cases and two regulator-maturity benchmarks).
 
 | Case | Jurisdiction | Signature |
 |------|--------------|-----------|
 | Meta / WhatsApp joint NDPC-FCCPC (2024-2025) | Nigerian precursor | Documented controls defeated by enforcement collapse |
 | Apple Card / Goldman Sachs (2019-2021) | International agentic comparator | Defensible model governance without transparency |
 | Ghana Mahama deepfake (2026) | International agentic comparator | Governance vacuum with reactive criminal accountability |
+| Sokoloan / NITDA sanction (2021) | Nigerian precursor | No governance, with automated data-harvesting weaponised |
+| NIMC NIN/BVN black market (2024-2026) | Nigerian precursor | Licensed-partner credentials resold with no oversight |
+| Hong Kong / UAE voice-clone fraud (2020) | International agentic comparator | Voice treated as authentication |
+| JAMB 2025 UTME failure | Nigerian precursor | Automated scores released with no pre-release human check |
+| Arup deepfake video conference (2024) | International agentic comparator | Deepfaked call defeats high-value transaction control |
+| Flutterwave incident series (2023-2024) | Nigerian precursor | Policies without continuous monitoring; four recurrences |
+| INEC IReV presidential upload (2023) | Nigerian precursor | Configuration fault on the flagship result path |
+| NDPC v. Fidelity Bank (2024) | Nigerian precursor | Consent breach with processor-oversight failure |
+| NDPC v. MultiChoice (2025) | Nigerian precursor | Unlawful cross-border transfer of subscriber data |
+| NDPC seven-firm action (2024) | Nigerian precursor | Aggregate enforcement across seven unnamed firms |
+| FCCPC / DEON Regulations (2022-2026) | Regulator-maturity benchmark | Documented, court-tested, continuously enforced regime |
+| NDPC 1,368-firm notice (2025) | Regulator-maturity benchmark | Sector-wide monitored enforcement with an audit cycle |
 
 Full per-dimension evidence tables, with primary-source citations, are
-in `docs/CASE_CODING_APPENDIX.md`. Chapter Five of the thesis extends
-the sample to the full twelve to fifteen case set using the same method.
+in `docs/CASE_CODING_APPENDIX.md`. All fifteen are coded under the same
+five-level rubric and the same coding rules; every score cites a primary
+source. The three stubs alone are still exported as `STUB_CASES` so the
+Chapter Four state remains addressable.
 
 ## Repository state and reproducibility
 
