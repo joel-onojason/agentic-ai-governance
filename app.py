@@ -164,6 +164,17 @@ with tab_cases:
                     f"{case.rationale[dim.id]}"
                 )
 
+            # The D1..D6 levels above are the empirical coding and are the same
+            # under both variants. Only the weighted total and the maturity
+            # level move with the weighting profile, so the card states them
+            # explicitly for the variant currently selected in the sidebar.
+            case_result = calculate_by_variant_id(variant_id, case.scores)
+            st.markdown(
+                f"**{get_variant(variant_id).name} weighted score:** "
+                f"{case_result.weighted_total:.2f} / 5.00 \u2014 "
+                f"{case_result.maturity_level_name}"
+            )
+
             # Heat-map sits directly after the per-dimension coding it plots,
             # with the failure signature beneath it as the narrative reading
             # of the shape the reader has just seen.
