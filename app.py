@@ -156,7 +156,6 @@ with tab_cases:
         with st.expander(case.name):
             st.markdown(f"**Jurisdiction:** {case.jurisdiction}")
             st.markdown(f"**Date range:** {case.date_range}")
-            st.markdown(f"**Failure signature:** {case.failure_signature}")
 
             st.markdown("**Per-dimension coding**")
             for dim in ALL_DIMENSIONS:
@@ -165,15 +164,19 @@ with tab_cases:
                     f"{case.rationale[dim.id]}"
                 )
 
-            st.markdown("**Primary sources**")
-            for src in case.primary_sources:
-                st.markdown(f"- {src}")
-
-            # Show heat-map for this case under the selected variant
+            # Heat-map sits directly after the per-dimension coding it plots,
+            # with the failure signature beneath it as the narrative reading
+            # of the shape the reader has just seen.
             fig = build_heatmap(
                 case.scores, title=f"{case.name.split(' (')[0]}: heat-map"
             )
             st.plotly_chart(fig, width="stretch")
+
+            st.markdown(f"**Failure signature:** {case.failure_signature}")
+
+            st.markdown("**Primary sources**")
+            for src in case.primary_sources:
+                st.markdown(f"- {src}")
 
 
 # ============ TAB 3: ABOUT ============
